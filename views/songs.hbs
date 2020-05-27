@@ -1,0 +1,24 @@
+<h1>Favorite Songs</h1>
+
+<form>
+  <p>
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title">
+  </p>
+  <p>
+    <label for="artist">Artist</label>
+    <input type="text" name="artist" id="artist">
+  </p>
+  <button id="addSong">Add Song</button>
+</form>
+
+<ol id="songs">
+  {{#each songs}}
+  <li>
+    {{this.title}} by {{this.artist}}
+    <button class="deleteSong" data-id="{{this.id}}">X</button>
+    </li>
+  {{/each}}
+</ol>
+
+<script src="./song.js"></script>
