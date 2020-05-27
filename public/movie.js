@@ -3,9 +3,12 @@ document.getElementById('addMovie').addEventListener('click', event => {
   axios.post('/api/movies', {
     title: document.getElementById('title').value
   })
-    .then(() => {
+    .then(({ data }) => {
       let movieElem = document.createElement('li')
-      movieElem.textContent = document.getElementById('title').value
+      movieElem.innerHTML = `
+        ${document.getElementById('title').value}
+        <button class="deleteMovie" data-id="${data.insertId}">X</button>
+      `
       document.getElementById('movies').append(movieElem)
     })
 })
