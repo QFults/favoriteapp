@@ -17,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/QFults/favoriteapp/issues"
   },
-  "homepage": "https://github.com/QFults/favoriteapp#readme"
+  "homepage": "https://github.com/QFults/favoriteapp#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "mysql2": "^2.1.0"
+  }
 }
