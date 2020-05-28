@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { Movie, Song } = require('../controllers')
+const { Movie, Song, Game } = require('../controllers')
 
 router.get('/', (req, res) => {
   res.render('home', {
@@ -16,6 +16,12 @@ router.get('/movies', (req, res) => {
 router.get('/songs', (req, res) => {
   Song.getSongs(songs => {
     res.render('songs', { songs })
+  })
+})
+
+router.get('/games', (req, res) => {
+  Game.getGames(games => {
+    res.render('games', { games })
   })
 })
 
